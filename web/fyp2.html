@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google" value="notranslate">
+
+	<title>Text-Mint</title>
+
+
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!---custom css link---->
+	<link rel="stylesheet" type="text/css" href="../static/fyp2.css">
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+	<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<!-- Include Bootstrap JS and Popper.js -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="../static/ocr.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://kit.fontawesome.com/4414288e8e.js"></script>
+	<script src='../static/tesseract.min.js'></script>
+
+
+
+</head>
+
+<body class="notranslate">
+	<script>
+		function toggleNav() {
+			var sidebar = document.getElementById("sidebar");
+			if (sidebar.style.width === "250px") {
+				sidebar.style.width = "0px";
+			} else {
+				sidebar.style.width = "250px";
+			}
+		}
+	</script>
+
+	<!----header design--->
+	<header>
+		<div id="container">
+			<!-- <img class="logo" src="1.jpg" alt=""> -->
+		</div>
+		<ol class="navlist">
+			<ol><a href="#home" class="active">Home</a></ol>
+			<ol><a href="#about">About Us</a></ol>
+			<ol><a href="#terms">Term & Conditions</a></ol>
+			<ol><a href="#services">Services</a></ol>
+			<ol><a href="#coming soon">Updates</a></ol>
+			<ol><a href="#contact">Contact</a></ol>
+
+			<div class="top">
+
+				<a onclick="hi()" class="btn">Logout</a>
+			</div>
+		</ol>
+
+		<div class="bx bx-menu" id="menu-icon">
+
+		</div>
+	</header>
+	<div class="home">
+		<video autoplay loop muted>
+			<source src="../static/news3.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		<!-- Additional content on top of the video if needed -->
+		<div class="content">
+			<section class="home" id="home">
+				<div class="home-text">
+					<div class="slide">
+						<span class="one">Hi</span>
+						<span class="two">I'm</span>
+					</div>
+					<h1>Text<span>Mint</span></h1>
+
+					<p>Text Mint is a platform that reviews your long documents, multi-documents and will give
+						you the best summary based on the tools that are used. You are looking to get more done, work
+						smarter
+						and save hours then this is the right place.</p>
+					<span class="wel">WELCOME</span>
+
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<!-- Toggle Button for Sidebar -->
+	<div id="sidebar-toggle" class="bx bx-menu" onclick="toggleNav()"
+		style="font-size: 35px; color: #818181; cursor: pointer; position: fixed; top: 15px; left: 15px; z-index: 1000;">
+	</div>
+
+	<!-- Sidebar -->
+	<div id="sidebar"
+		style="height: 100%; width: 0; position: fixed; z-index: 2; top: 0; left: 0; background-color: #111; overflow-x: hidden; transition: 0.5s; padding-top: 60px;">
+		<!-- Add more links as needed -->
+	</div>
+
+	<script>
+		function openNav() {
+			document.getElementById("sidebar").style.width = "250px";
+		}
+
+		function closeNav() {
+			document.getElementById("sidebar").style.width = "0";
+		}
+	</script>
+
+
+
+	<!----home section design--->
+
+
+	<!----about section design--->
+	<section class="about" id="about">
+		<div class="about-img">
+			<img src="../static/1.jpg">
+		</div>
+
+		<div class="about-text">
+			<h2>About <span>Us</span></h2>
+			<h4><span>Text</span> Mint</h4>
+			<p>To help you summarize,we provide you with a "Summary text tool". Summarize in 1-Click, go to the main
+				idea or skim through so that you can then interpret your texts quickly. We will condense larger text to
+				shorter so you get key summary. Our suggestions help to replace complicated sentences with more
+				efficient ones and uphold accurate punctuation. Using a variety of innovative approaches including
+				advanced machine learning and deep learning. We consistently break new ground in natural language
+				processing (NLP) research to deliver unrivalled assistance in our website. Your data security and
+				integrity is our top priority. Company core business integrity and client protections are critical, so
+				your data integrity is safe with us.</p>
+			<!-- <a href="#services" class="btn">More About</a> -->
+		</div>
+	</section>
+
+	<!-- Terms & condition section -->
+	<section class="terms" id="terms">
+		<div class="main-text">
+			<p>Must read that before preceding toword services.</p>
+			<h2>Terms & <span>Conditions</span> </h2>
+			<p>Text Mint is an online platform that reviews your long documents, multi-documents and will give
+				you the best summary based on the tools that are used. You are looking to get more done, work smarter
+				and save hours then this is the right place.</p>
+		</div>
+
+		<div class="terms-content">
+			<div class="box">
+				<h2><span> User </span> Perspective</h2>
+				<ul>
+					<li>Upload the file.</li>
+					<li>Translate the Summary.</li>
+					<li>Listen Summary.</li>
+					<li> To download the file simple write file name with extention e.g: ali.doc,ali.txt,ali.pdf</li>
+					<li>Privacy will be insured.</li>
+					<li>Data integrity is insured.</li>
+					<li>Enjoy the best.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!----service section design--->
+	<section class="services" id="services">
+
+		<div class="main-text">
+			<p>Get ready for</p>
+			<h2>Our<span> Service!</span> </h2>
+			<p>Quickly summarize large volumes of text or document into shorter meaningful document using Abstractive
+				Text Summarization. Abstractive text summarization transforms lengthy documents into shorter versions
+				which is usually difficult and expensive to undertake if done manually. The document is summarized using
+				Natural language processing summarization techniques and human expertise to deliver as per your
+				requirement.</p>
+		</div>
+		<div class="box1">
+			<div class="container mt-3">
+				<div class="row">
+					<div class="col-12 col-md-4 ">
+						<select id="langsel">
+
+							<option value='eng' selected> English </option>
+
+						</select>
+					</div>
+					<div class="col-12 col-md-4 mt-3 mt-md-0">
+						<div class="box">
+							<input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1"
+								data-multiple-caption="{count} files selected" multiple />
+							<label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"
+									viewBox="0 0 20 17">
+									<path
+										d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z" />
+								</svg> <span>Choose a file&hellip;</span></label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-md-5">
+						<div class="image-container"><img id="selected-image" src="../static/Funny-Minion-Quotes.jpg"
+								class="col-12 p-0" /></div>
+					</div>
+					<div class="col-12 col-md-1">
+						<i id="arrow-right" class="fas fa-arrow-right d-none d-md-block"></i>
+						<i id="arrow-down" class="fas fa-arrow-down d-block d-md-none"></i>
+					</div>
+					<div class="col-12 col-md-6">
+						<div id="log">
+							<span id="startPre">
+								<a id="startLink" href="#">Click here to recognize text in the demo</a>
+								<br /> or choose your own image
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="services-content">
+
+			<div class="box">
+				<h2>Upload <span>Files</span> Here!</h2>
+				<div>
+					<textarea id="textArea" rows="10" cols="65" placeholder="Enter text here..."></textarea>
+				</div>
+
+				<form action="/action_page.php" enctype="multipart/form-data">
+					<input type="file" id="myfile" name="myfile" multiple="multiple" accept=".txt, .pdf" /><br /><br />
+					<div class="top">
+						<a class="btn" onclick="displayText()">Generate Summary</a>
+					</div>
+				</form>
+
+
+			</div>
+
+			<div class="box">
+				<h2><span> Abstractive </span> Text Summarization!</h2>
+				<div style="display: flex; align-items: flex-start;">
+					<textarea class="nottranslate" id="freeform" name="freeform" rows="10" cols="65"
+						placeholder="Your summary will be here...!"></textarea>
+					<div id="translatedDiv" class="container bg-light scrollable-div translate"
+						style="width: 78%; height: 250px; max-height: 300px; margin-left: 3px; color: black; overflow-y: auto;">
+					</div>
+				</div>
+
+				<div id="google_translate_element"></div>
+
+				<div class="bottom-buttons">
+					<label>Save <span>As:</span></label>
+					<input placeholder="Specify name with extension, e.g., filename.txt" id="filename">
+					<a class="btn" id="download">Download</a>
+					<a class="btn" id="readBtn">Read Loud</a>
+				</div>
+			</div>
+
+			<script>
+				function googleTranslateElementInit() {
+					new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+				}
+			</script>
+
+
+
+	</section>
+
+
+	<!----Coming Soon section design--->
+	<section class="coming soon" id="coming soon">
+		<div class="main-text">
+			<p>Coming Soon</p>
+			<h2><span>Future</span> Update</h2>
+			<p>Future updates will be coming soon.</p>
+		</div>
+
+		<div class="cs-content">
+			<div class="row">
+				<img src="../static/cs7.jpg">
+				<div class="layer">
+					<h5>Coming Soon</h5>
+					<p>Text Mint</p>
+					<a href="#"><i class='bx bx-link-external'></i></a>
+				</div>
+			</div>
+
+			<div class="row">
+				<img src="../static/cs8.jpg">
+				<div class="layer">
+					<h5>Coming Soon</h5>
+					<p>Text Mint</p>
+					<a href="#"><i class='bx bx-link-external'></i></a>
+				</div>
+			</div>
+
+			<div class="row">
+				<img src="../static/cs9.jpg">
+				<div class="layer">
+					<h5>Coming Soon</h5>
+					<p>Text Mint</p>
+					<a href="#"><i class='bx bx-link-external'></i></a>
+				</div>
+			</div>
+
+			<div class="row">
+				<img src="../static/cs10.jpg">
+				<div class="layer">
+					<h5>Coming Soon</h5>
+					<p>Text Mint</p>
+					<a href="#"><i class='bx bx-link-external'></i></a>
+				</div>
+			</div>
+
+			<div class="row">
+				<img src="../static/cs11.jpg">
+				<div class="layer">
+					<h5>Coming Soon</h5>
+					<p>Text Mint</p>
+					<a href="#"><i class='bx bx-link-external'></i></a>
+				</div>
+			</div>
+
+			<div class="row">
+				<img src="../static/cs3.jpg">
+				<div class="layer">
+					<h5>Coming Soon</h5>
+					<p>Text Mint</p>
+					<a href="#"><i class='bx bx-link-external'></i></a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<!----contact section design--->
+	<section class="contact" id="contact">
+		<div class="contact-text">
+			<h2>Contact <span>Us!</span></h2>
+			<h4>If You Have Any Query Rregarding Text Mint.</h4>
+			<p>Your feedback will be highly appreciated. </p>
+			<div class="list">
+				<li><a href="#">+923495443094</a></li>
+				<li><a href="#">moiz96704@gmail.com</a></li>
+
+			</div>
+
+			<div class="contact-icons">
+				<a href="#"><i class='bx bxl-facebook'></i></a>
+				<a href="#"><i class='bx bxl-twitter'></i></a>
+				<a href="#"><i class='bx bxl-instagram-alt'></i></a>
+				<a href="#"><i class='bx bxl-gmail'></i></a>
+			</div>
+		</div>
+
+		<div class="contact-form">
+
+			<form action="" id="form">
+
+				<input id="name" placeholder="Your Name">
+				<input id="email" placeholder="Your Email">
+				<textarea name="" id="t" cols="50" rows="10" placeholder="How Can I Help You"></textarea>
+				<div class="rating">
+					<span class="star" onclick="rate(1)">&#9733;</span>
+					<span class="star" onclick="rate(2)">&#9733;</span>
+					<span class="star" onclick="rate(3)">&#9733;</span>
+					<span class="star" onclick="rate(4)">&#9733;</span>
+					<span class="star" onclick="rate(5)">&#9733;</span>
+				</div>
+				<a class="btn" id="btn" onclick="save()">Submits</a>
+
+			</form>
+
+		</div>
+
+		<div id="feedbackCarousel" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner mx-auto" id="carousel-inner">
+				<!-- Feedback items will be dynamically added here -->
+			</div>
+			<a class="carousel-control-prev" href="#feedbackCarousel" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#feedbackCarousel" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+
+
+	</section>
+	<!----end section design--->
+	<section class="end">
+		<div class="last-text">
+			<p></p>
+		</div>
+
+	</section>
+	<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+
+	<script>
+
+		function hi() {
+			window.location.assign("index.html");
+		}
+		
+		function displayText() {
+            var fileInput = document.getElementById('myfile');
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                var result = e.target.result;
+                var text;
+
+                if (file) {
+                    if (file.type === 'application/pdf') {
+                        var loadingTask = pdfjsLib.getDocument({ data: result });
+                        loadingTask.promise.then(function (pdf) {
+                            var pagePromises = [];
+                            for (var pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                                pagePromises.push(getPageText(pdf, pageNum));
+                            }
+
+                            Promise.all(pagePromises).then(function (pages) {
+                                text = pages.join(' ');
+                                sendTextForSummarization(text);
+                            });
+                        });
+                    } else {
+                        text = result;
+                        sendTextForSummarization(text);
+                    }
+                } else {
+                    text = document.getElementById('textArea').value;
+                    sendTextForSummarization(text);
+                }
+            };
+
+            if (file && file.type === 'text/plain') {
+                reader.readAsText(file);
+            } else if (file) {
+                reader.readAsArrayBuffer(file);
+            } else {
+                var text = document.getElementById('textArea').value;
+                sendTextForSummarization(text);
+            }
+        }
+
+		function sendTextForSummarization(text) {
+			var formData = new FormData();
+			formData.append('text', text);
+			var fileInput = document.getElementById('myfile');
+			if (fileInput.files.length > 0) {
+				formData.append('file', fileInput.files[0]);
+			}
+
+			fetch('/', {
+				method: 'POST',
+				body: formData
+			})
+			.then(response => response.json())
+			.then(data => {
+				updateTextAreas(text, data.summary);
+			})
+			.catch(error => {
+				console.error('Error:', error);
+			});
+		}
+
+        function updateTextAreas(text, summary) {
+            document.getElementById('textArea').value = text;
+            document.getElementById('freeform').value = summary;
+            document.getElementById('translatedDiv').innerText = summary;
+        }
+
+	</script>
+	<script>
+		function download(filename, content, isPDF) {
+			const element = document.createElement('a');
+			let blob;
+
+			if (isPDF) {
+				blob = new Blob([content], { type: 'application/pdf' });
+			} else {
+				blob = new Blob([content], { type: 'plain/text' });
+			}
+
+			const fileUrl = URL.createObjectURL(blob);
+
+			element.setAttribute('href', fileUrl);
+			element.setAttribute('download', filename);
+
+			element.style.display = 'none';
+
+			document.body.appendChild(element);
+			element.click();
+			document.body.removeChild(element);
+		}
+
+
+		function createDownloadButtonInSidebar(content) {
+			const downloadButton = document.createElement('button');
+			downloadButton.innerHTML = '<i class="fas fa-download"></i>'; // Using FontAwesome icon for download
+			downloadButton.classList.add('download-button'); // Add the custom styling class
+			downloadButton.addEventListener('click', function () {
+				// When the button is clicked, download the summary
+				download('summary_from_sidebar.txt', content, false);
+			});
+
+			const sidebar = document.getElementById('sidebar');
+			sidebar.appendChild(downloadButton);
+			sidebar.appendChild(document.createElement('br')); // Add a line break for spacing
+		}
+
+		// Add this function to be called when updating the sidebar
+		function updateSidebarWithDownloadButton(content) {
+			updateSidebar(content);
+			createDownloadButtonInSidebar(content);
+		}
+
+		function downloadOrGeneratePDF() {
+			const filename = document.getElementById('filename').value;
+			const content = document.getElementById('translatedDiv').innerText; // Get content from translatedDiv
+
+			if (filename && content) {
+				const isPDF = filename.toLowerCase().endsWith('.pdf');
+
+				if (isPDF) {
+					generatePDF(filename, content);
+				} else {
+					download(filename, content, false);
+				}
+
+				// Update the sidebar with the summary and add the download button
+				updateSidebarWithDownloadButton(content);
+			}
+		}
+
+		function generatePDF(filename, text) {
+			const pdf = new window.jspdf.jsPDF();
+			pdf.text(10, 10, text, { maxWidth: 190 }); // Adjust the maxWidth based on your needs
+
+			// Use pdf.save() to trigger the download directly
+			pdf.save(filename);
+		}
+
+
+		function updateSidebar(content) {
+			// Get the current date
+			const currentDate = new Date();
+			const formattedDate = currentDate.toLocaleDateString(); // Display only the date
+
+			// Create a new div to hold the timestamped content
+			const timestampedContent = document.createElement('div');
+			timestampedContent.classList.add('summary-item');
+			timestampedContent.innerHTML = `<strong>${formattedDate}</strong> - ${content.replace(/\n/g, ' ')}`;
+
+			// Set cursor style using JavaScript
+			timestampedContent.style.cursor = 'pointer';
+
+			// Add an identifier class to check if the cursor style has been applied
+			timestampedContent.classList.add('cursor-applied');
+
+			// Check if the cursor style has already been applied to an existing element
+			const existingItems = document.querySelectorAll('.summary-item:not(.cursor-applied)');
+			existingItems.forEach(item => {
+				item.style.cursor = 'pointer';
+				item.classList.add('cursor-applied');
+			});
+
+			// Add a context menu with "View" and "Download" options
+			timestampedContent.addEventListener('contextmenu', function (event) {
+				event.preventDefault();
+				const contextMenu = document.createElement('div');
+				contextMenu.classList.add('context-menu');
+				contextMenu.style.top = event.clientY + 'px';
+				contextMenu.style.left = event.clientX + 'px';
+
+				const viewOption = document.createElement('div');
+				viewOption.classList.add('context-menu-option');
+				viewOption.innerHTML = 'View';
+				viewOption.addEventListener('click', function () {
+					const viewWindow = window.open('', '_blank');
+					viewWindow.document.write(`<pre>${content}</pre>`);
+					contextMenu.remove();
+				});
+
+				const downloadOption = document.createElement('div');
+				downloadOption.classList.add('context-menu-option');
+				downloadOption.innerHTML = 'Download';
+				downloadOption.addEventListener('click', function () {
+					download('summary.txt', content, false);
+					contextMenu.remove();
+				});
+
+				contextMenu.appendChild(viewOption);
+				contextMenu.appendChild(downloadOption);
+				document.body.appendChild(contextMenu);
+
+				// Close the context menu when clicking outside of it
+				document.addEventListener('click', function (e) {
+					if (!contextMenu.contains(e.target)) {
+						contextMenu.remove();
+					}
+				});
+			});
+
+			// Set cursor style for the summary item
+			timestampedContent.style.cursor = 'pointer';
+
+			// Append the new content to the existing content in the sidebar
+			const sidebar = document.getElementById('sidebar');
+			sidebar.appendChild(timestampedContent);
+			sidebar.appendChild(document.createTextNode('\u00A0\u00A0')); // Add non-breaking spaces for gap
+
+		}
+
+		window.onload = () => {
+			document.getElementById('download').addEventListener('click', e => {
+				downloadOrGeneratePDF();
+			});
+		}
+	</script>
+
+
+
+
+
+	<script>
+		// Get the input and button elements
+		const input = document.getElementById('freeform');
+		const readBtn = document.getElementById('readBtn');
+
+		// Create a new instance of the SpeechSynthesis API
+		const synth = window.speechSynthesis;
+		let isSpeaking = false;
+		let utterance;
+
+		// Create a function to toggle between reading and stopping the input text out loud
+		function toggleSpeech() {
+			if (isSpeaking) {
+				// If speaking, stop the speech
+				synth.cancel();
+				readBtn.innerText = 'Read Loud';
+			} else {
+				// If not speaking, start reading the input text
+				utterance = new SpeechSynthesisUtterance(input.value);
+				utterance.voice = synth.getVoices()[0];
+				utterance.rate = 1.2;
+				synth.speak(utterance);
+				readBtn.innerText = 'Stop';
+			}
+
+			// Toggle the speaking state
+			isSpeaking = !isSpeaking;
+		}
+
+		// Add an event listener to the button element
+		readBtn.addEventListener('click', toggleSpeech);
+	</script>
+
+
+	<!---custom js link--->
+	<script src="../static/tesseract-ocr.js"></script>
+	<script type="text/javascript" src="../static/fyp1.txt"></script>
+	<script src="../static/feeb.js"></script
+</body>
+
+</html>
